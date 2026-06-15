@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVERLUNA - Repuestos y Accesorios</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header id="inicio">
+        <div class="logo-fondo-container">
+            <img src="images/img logo.jpeg" alt="Logo Inverluna" class="logo-pantalla-completa">
+            <div class="capa-desvanecido"></div>
+            
+            <nav class="menu-navegacion">
+                <button class="menu-btn" onclick="scrollToElement('inicio')">INICIO</button>
+                <button class="menu-btn" onclick="scrollToElement('catalogo')">CATÁLOGO</button>
+                <button class="menu-btn" onclick="scrollToElement('productos')">PRODUCTOS</button>
+                <button class="menu-btn" onclick="scrollToElement('nosotros')">NOSOTROS</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <img src="images/img 1.jpeg" alt="Banner Principal" class="hero-image">
+    </section>
+
+    <section id="productos" class="productos-section">
+        <h1 class="productos-titulo">PRODUCTOS</h1>
+        <p class="productos-subtitulo">!mas vendidos¡</p>
+        
+        <div class="productos-grid">
+            <div class="producto-card" onclick="flipCard(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="images/img 2.jpeg" alt="AKT NKD 125">
+                    </div>
+                    <div class="back">
+                        <p class="producto-info">AKT NKD 125<br><br>$5.400.090<br><br>Motor: 125 cc, 4 tiempos.<br><br>Transmisión: Manual de 5 velocidades.<br><br>Diseño: Minimalista, cómoda y de mantenimiento económico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card" onclick="flipCard(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="images/img 3.jpeg" alt="HONDA XR190L">
+                    </div>
+                    <div class="back">
+                        <p class="producto-info">HONDA XR190L<br><br>$14.000.000<br><br>Motor: 184 cc 4 tiempos<br><br>Transmisión: Manual de 5 velocidades.<br><br>Diseño: Robusto, aventurero y de gran altura al suelo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card" onclick="flipCard(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="images/img 4.jpeg" alt="LEDO 2">
+                    </div>
+                    <div class="back">
+                        <p class="producto-info">LEDO 2<br><br>Bicicleta eléctrica<br><br>Autonomía hasta 35KM (Eco Mode)<br><br>Tiempo de carga: 8horas.<br><br>Motor: 48V 500W<br><br>Energía Batería: 576Wh<br><br>Carga: 150Kg<br><br>Capacidad batería: 48V12Ah<br><br>Accesorios: Sistema de alarma<br><br>$1.900.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card" onclick="flipCard(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="images/img 5.jpeg" alt="LEDO 3">
+                    </div>
+                    <div class="back">
+                        <p class="producto-info">LEDO 3<br><br>Bicicleta eléctrica<br><br>Autonomía hasta 45KM (Eco Mode)<br><br>Tiempo de carga: 4-6horas.<br><br>Motor: 48V 500W<br><br>Energía Batería: 576Wh<br><br>Capacidad batería: 48V12Ah<br><br>Accesorios: Sistema de alarma<br><br>$2.600.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card" onclick="flipCard(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="images/img 6.jpeg" alt="Casco SHAFT SH-3540">
+                    </div>
+                    <div class="back">
+                        <p class="producto-info">Casco SHAFT SH-3540 DV Solid<br><br>SHAFT<br><br>$410.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card" onclick="flipCard(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="images/img 7.jpeg" alt="Casco SHAFT SH-3820">
+                    </div>
+                    <div class="back">
+                        <p class="producto-info">Casco SHAFT SH-3820 SP Solid<br><br>SHAFT<br><br>$430.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card" onclick="flipCard(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="images/img 8.jpeg" alt="Casco HRO 3480DV">
+                    </div>
+                    <div class="back">
+                        <p class="producto-info">Casco HRO 3480DV_EVO Solid<br><br>HRO<br><br>$250.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card" onclick="flipCard(this)">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="images/img 9.jpeg" alt="Casco HRO HRO-3440DV">
+                    </div>
+                    <div class="back">
+                        <p class="producto-info">Casco HRO HRO-3440DV Solid<br><br>HRO<br><br>$260.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="conocer-mas-container">
+            <a href="https://wa.me/573218067335" class="btn-conocer-mas" target="_blank">CONOCER MÁS</a>
+        </div>
+    </section>
+
+    <section class="video-container">
+        <video id="vid" class="main-video" autoplay muted loop playsinline>
+            <source src="images/vid.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </section>
+
+    <section id="catalogo" class="catalogo-section">
+        <h2 class="catalogo-titulo">CATALOGO</h2>
+        
+        <div class="catalogo-grid">
+            <a href="https://drive.google.com/file/d/1c6RhN3r6XXMA2SmvNijXD7ew22ZaBJ8P/view?usp=drive_link" target="_blank" class="catalogo-btn">CATALOGOS MOTOS A GASOLINA</a>
+            <a href="https://drive.google.com/file/d/1mcI3rUTw3ETacyMUs-QUDU8dQhoQ9d7Z/view?usp=drive_link" target="_blank" class="catalogo-btn">CATALOGO DE MOTOS ELECTRICAS</a>
+            <a href="https://drive.google.com/file/d/1prfPQmi2Mz7YmgMxNIGwzJ-g9QNMuEyf/view?usp=sharing" target="_blank" class="catalogo-btn">CATALOGO DE REPUESTOS</a>
+            <a href="https://drive.google.com/file/d/1nhUM0PftxiXNr6f3Ze4UZ0nvvMLgfP19/view?usp=sharing" target="_blank" class="catalogo-btn">ACCESORIOS DE MOTOS Y MOTOCICLISTAS</a>
+        </div>
+        
+        <p class="catalogo-aviso">PARA MAYOR INFORMACION ESCRIBE A WHATSAPP</p>
+    </section>
+
+    <section class="pagos-section">
+        <h2 class="pagos-titulo">METODOS DE PAGOS</h2>
+        <div class="pagos-container">
+            <img src="images/img bancolombia.jpeg" alt="Img bancolombia" class="pago-logo">
+            <img src="images/img nequi.jpeg" alt="Img nequi" class="pago-logo">
+        </div>
+    </section>
+
+    <section id="nosotros" class="contacto-section">
+        <h2 class="contacto-titulo">CONTACTOS</h2>
+        <div class="contacto-grid">
+            <a href="tel:+573003886358" class="contacto-box">Tel +57 3003886358</a>
+            <a href="https://wa.me/573218067335" class="contacto-box" target="_blank">Wsp +57 321 8067335</a>
+            <a href="mailto:servicioalcliente@inversionesluna.com.co" class="contacto-box">Gmail servicioalcliente@inversionesluna.com.co</a>
+            <a href="https://www.facebook.com/share/1CXMpNGStY/?mibextid=wwXIfr" class="contacto-box" target="_blank">Facebook inver luna</a>
+            <a href="https://www.instagram.com/inver.luna?igsh=MXg0aHA1dWNjejQwNQ==" class="contacto-box" target="_blank">Instagram inver.luna</a>
+        </div>
+    </section>
+
+    <section class="quienes-somos-section">
+        <h2 class="quienes-somos-titulo">QUIÉNES SOMOS</h2>
+        <p class="quienes-somos-texto">Inversiones Evaluna S.A.S: 14 años moviendo a Colombia. Vendemos motos eléctricas y a gasolina, repuestos y accesorios originales con garantía y respaldo real. Llevamos potencia y calidad directo a tu ciudad, con envíos seguros a todo el país. Consulta nuestro catálogo en línea y estrena la moto que buscas.</p>
+    </section>
+
+    <footer>
+        <a href="https://wa.me/573218067335" class="whatsapp-flotante" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
