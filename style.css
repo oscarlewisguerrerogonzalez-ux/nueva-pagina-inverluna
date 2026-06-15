@@ -1,0 +1,398 @@
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --rojo-oscuro: #8b0000;
+    --rojo-claro: #ff3333;
+    --negro: #000000;
+    --blanco: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--blanco);
+    color: var(--negro);
+}
+
+/* ENCABEZADO CON LOGO DE LADO A LADO Y EFECTO DESVANECIDO */
+header {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-fondo-container {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Altura del espacio para el logo y menú */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Coloca el menú abajo */
+    align-items: center;
+}
+
+.logo-pantalla-completa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que se amplíe cubriendo todo el ancho */
+    z-index: 1;
+}
+
+/* Capa oscura que hace que el logo se desvanezca hacia abajo para que resalten los cuadros */
+.capa-desvanecido {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /* Comienza el desvanecido desde la mitad */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    z-index: 2;
+}
+
+.menu-navegacion {
+    position: relative;
+    z-index: 3; /* Por encima de la foto y el desvanecido */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 25px; /* Separación con la parte inferior */
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.menu-btn {
+    background-color: var(--rojo-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Efecto al pasar el cursor o presionar */
+.menu-btn:hover, .menu-btn:focus {
+    transform: scale(1.1);
+    background-color: var(--rojo-claro);
+    box-shadow: 0 0 20px var(--rojo-claro);
+}
+
+/* IMAGEN 1 (LADO A LADO) */
+.hero-section {
+    width: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* SECCIÓN PRODUCTOS MÁS VENDIDOS */
+.productos-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.productos-titulo {
+    text-align: center;
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+.productos-subtitulo {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 35px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+@media (max-width: 900px) {
+    .productos-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 500px) {
+    .productos-grid { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* EFECTO GIRO DE TARJETAS (180 GRADOS) */
+.producto-card {
+    height: 280px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.producto-card.flipped .flipper {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.back {
+    background-color: var(--negro);
+    transform: rotateY(180deg);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    border: 2px solid var(--rojo-oscuro);
+}
+
+.producto-info {
+    font-size: 13px;
+    color: var(--blanco);
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* BOTÓN CONOCER MÁS */
+.conocer-mas-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-conocer-mas {
+    background-color: var(--rojo-oscuro);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-conocer-mas:hover {
+    transform: scale(1.1);
+    background-color: var(--rojo-claro);
+    box-shadow: 0 0 15px var(--rojo-claro);
+}
+
+/* SECCIÓN VIDEO (DE LADO A LADO) */
+.video-container {
+    width: 100%;
+    margin: 40px 0;
+    background-color: var(--negro);
+}
+
+.main-video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+}
+
+/* SECCIÓN CATÁLOGOS */
+.catalogo-section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.catalogo-titulo {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 650px) {
+    .catalogo-grid { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+.catalogo-btn {
+    background-color: var(--rojo-oscuro);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 25px 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.catalogo-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--rojo-claro);
+    box-shadow: 0 0 15px var(--rojo-claro);
+}
+
+.catalogo-aviso {
+    margin-top: 35px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* MÉTODOS DE PAGO */
+.pagos-section {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.pagos-titulo {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.pagos-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.pago-logo {
+    height: 70px;
+    object-fit: contain;
+}
+
+/* SECCIÓN CONTACTOS (CUADROS EN ROJO) */
+.contacto-section {
+    max-width: 900px;
+    margin: 50px auto 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.contacto-titulo {
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .contacto-grid { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+.contacto-box {
+    background-color: var(--rojo-oscuro);
+    color: var(--blanco);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid var(--rojo-claro);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.contacto-box:hover {
+    transform: scale(1.02);
+    background-color: var(--rojo-claro);
+}
+
+/* SECCIÓN QUIÉNES SOMOS */
+.quienes-somos-section {
+    max-width: 900px;
+    margin: 0 auto 100px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.quienes-somos-titulo {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--rojo-oscuro);
+}
+
+.quienes-somos-texto {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* BOTÓN FLOTANTE DE WHATSAPP OFICIAL */
+footer {
+    position: relative;
+}
+
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: var(--blanco);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.1);
+    background-color: #1fba53;
+}
